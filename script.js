@@ -17,10 +17,10 @@
 /* globale variabelen die je gebruikt in je game */
 /* ********************************************* */
 
-const UITLEG = 0;
+const STARTSCHERM = 0;
 const SPELEN = 1;
 const GAMEOVER = 2;
-var spelStatus = SPELEN;
+var spelStatus = STARTSCHERM;
 
 var spelerX = 200; // x-positie van speler
 var spelerY = 100; // y-positie van speler
@@ -41,6 +41,12 @@ var score = 0; // aantal behaalde punten
 /*      functies die je gebruikt in je game      */
 /* ********************************************* */
 
+/**
+ * Tekent het startscherm
+ */
+var tekenStartscherm = function () {
+  tekst("startscherm",100,100);
+};
 
 /**
  * Tekent het speelveld
@@ -161,6 +167,12 @@ function setup() {
  */
 function draw() {
   switch (spelStatus) {
+    case STARTSCHERM:
+        tekenStartscherm();
+        if (keyIsDown(32)) {// 32=spatie
+           spelStatus = SPELEN;
+        }
+        break;
     case SPELEN:
       beweegVijand();
       beweegKogel();
