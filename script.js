@@ -78,9 +78,9 @@ var tekenKogel = function(x, y) {
  * @param {number} x x-coördinaat
  * @param {number} y y-coördinaat
  */
-var tekenSpeler = function() {
+var tekenSpeler = function(x, y) {
   fill("white");
-  ellipse(spelerX, spelerY, 50, 50);
+  ellipse(x, y, 50, 50);
 };
 
 
@@ -106,6 +106,13 @@ var beweegKogel = function() {
  */
 var beweegSpeler = function() {
 
+        if (spelerX >= 400) {
+        spelerX = 0;
+      }
+
+      if (keyIsDown(37)) { // 37=left arrow
+        spelerX = spelerX - 5;
+      }
 };
 
 /**
@@ -165,15 +172,8 @@ function draw() {
       beweegKogel();
       beweegSpeler();
 
-       tekenSpeler(spelerX,spelerY);
+       
 
-        if (spelerX => 400) {
-        spelerX = 0;
-      }
-
-      if (keyIsDown(37)) { // 37=left arrow
-        spelerX = spelerX - 5;
-      }
       
       if (checkVijandGeraakt()) {
         // punten erbij
