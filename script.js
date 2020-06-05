@@ -49,7 +49,9 @@ var score = 0; // aantal behaalde punten
  */
 var tekenStartscherm = function () {
 
+
     background(0,0,0);
+    
 
     fill(250, 180, 60);
     rect(xStartBtn,yStartBtn, 390,100);
