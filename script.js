@@ -23,7 +23,7 @@ const GAMEOVER = 2;
 var spelStatus = SPELEN;
 
 var spelerX = 200; // x-positie van speler
-var spelerY = 0; // y-positie van speler
+var spelerY = 20; // y-positie van speler
 
 var kogelX = 0;    // x-positie van kogel
 var kogelY = 0;    // y-positie van kogel
@@ -75,8 +75,8 @@ var tekenKogel = function(x, y) {
 
 /**
  * Tekent de speler
- * @param {number} spelerX x-coördinaat
- * @param {number} spelerY y-coördinaat
+ * @param {number} x x-coördinaat
+ * @param {number} y y-coördinaat
  */
 var tekenSpeler = function() {
   fill("white");
@@ -105,9 +105,7 @@ var beweegKogel = function() {
  * Updatet globale variabele spelerX en spelerY
  */
 var beweegSpeler = function() {
-    if (keyIsDown(37)) {
-        x = x + 5;
-    }
+
 };
 
 /**
