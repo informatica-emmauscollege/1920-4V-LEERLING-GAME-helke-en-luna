@@ -22,8 +22,11 @@ const SPELEN = 1;
 const GAMEOVER = 2;
 var spelStatus = STARTSCHERM;
 
-var spelerX = 200; // x-positie van speler
-var spelerY = 200; // y-positie van speler
+var speler1X = 200; // x-positie van speler1
+var speler1Y = 200; // y-positie van speler1
+
+var speler2X = 400; // x-positie van speler2
+var speler2Y = 400; // y-positie van speler2
 
 var kogelX = 0;    // x-positie van kogel
 var kogelY = 0;    // y-positie van kogel
@@ -112,8 +115,13 @@ var tekenKogel = function(x, y) {
  * @param {number} x x-coördinaat
  * @param {number} y y-coördinaat
  */
-var tekenSpeler = function(x, y) {
+var tekenSpeler1 = function(x, y) {
   fill("white");
+  ellipse(x, y, 50, 50);
+};
+
+var tekenSpeler2 = function(x, y) {
+  fill("red");
   ellipse(x, y, 50, 50);
 };
 
@@ -138,21 +146,43 @@ var beweegKogel = function() {
  * Kijkt wat de toetsen/muis etc zijn.
  * Updatet globale variabele spelerX en spelerY
  */
-var beweegSpeler = function() {
- spelerY = spelerY + 5;
+var beweegSpeler1 = function() {
+ speler1Y = speler1Y + 5;
 
- if (spelerY > 200) {
-     spelerY = 200;
+ if (speler1Y > 200) {
+     speler1Y = 200;
  }
 
 
  if (keyIsDown(37)) { // 37=left arrow
-        spelerX = spelerX - 5;
-      } else if (keyIsDown(39)) { // 39=right arrow 
-          spelerX = spelerX + 5;
-      } else if (keyIsPressed === true) { // 38=up arrow
-         if (keyCode === 38)
-          spelerY = spelerY - 10;
+        speler1X = speler1X - 5;
+      } 
+ if (keyIsDown(39)) { // 39=right arrow 
+          speler1X = speler1X + 5;
+      } 
+ if (keyIsPressed === true) { 
+         if (keyCode === 38) // 38=up arrow
+          speler1Y = speler1Y - 10;
+      } 
+};
+
+var beweegSpeler2 = function() {
+ speler2Y = speler2Y + 5;
+
+ if (speler2Y > 200) {
+     speler2Y = 200;
+ }
+
+
+ if (keyIsDown(65)) { // 65=a
+        speler2X = speler2X - 5;
+      } 
+ if (keyIsDown(68)) { // 68=d
+          speler2X = speler2X + 5;
+      }
+ if (keyIsPressed === true) { 
+         if (keyCode === 87) // 87=w
+          speler2Y = speler2Y - 10;
       } 
 };
 
@@ -219,7 +249,8 @@ function draw() {
         tekenVeldVoor();
       beweegVijand();
       beweegKogel();
-      beweegSpeler();
+      beweegSpeler1();
+      beweegSpeler2();
 
        
 
@@ -235,7 +266,8 @@ function draw() {
       }
     tekenVijand(vijandX, vijandY);
       tekenKogel(kogelX, kogelY);
-      tekenSpeler(spelerX, spelerY);
+      tekenSpeler1(speler1X, speler1Y);
+      tekenSpeler2(speler2X, speler2Y);
 
       if (checkGameOver()) {
         spelStatus = GAMEOVER;
