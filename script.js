@@ -150,6 +150,10 @@ var beweegSpeler = function() {
 
  if (keyIsDown(37)) { // 37=left arrow
         spelerX = spelerX - 5;
+      } else if (keyIsDown(39)) { // 39=right arrow 
+          spelerX = spelerX + 5;
+      } else if (keyIsDown(38)) { // 38=up arrow
+          spelerY = spelerY + 20;
       }
 };
 
