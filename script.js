@@ -17,10 +17,10 @@
 /* globale variabelen die je gebruikt in je game */
 /* ********************************************* */
 
-const UITLEG = 0;
+const STARTSCHERM = 0;
 const SPELEN = 1;
 const GAMEOVER = 2;
-var spelStatus = SPELEN;
+var spelStatus = STARTSCHERM;
 
 var spelerX = 200; // x-positie van speler
 var spelerY = 20; // y-positie van speler
@@ -30,6 +30,9 @@ var kogelY = 0;    // y-positie van kogel
 
 var vijandX = 0;   // x-positie van vijand
 var vijandY = 0;   // y-positie van vijand
+
+var xStartBtn = 460 // x-positie startknop
+var yStartBtn = 320 // y-positie startknop
 
 var score = 0; // aantal behaalde punten
 
@@ -41,12 +44,31 @@ var score = 0; // aantal behaalde punten
 /*      functies die je gebruikt in je game      */
 /* ********************************************* */
 
+/**
+ * Tekent het startscherm
+ */
+var tekenStartscherm = function () {
+<<<<<<< HEAD
+    
+    background(0,0,0);
 
+    fill(250, 180, 60);
+    rect(xStartBtn,yStartBtn, 390,100);
+    
+    fill(250, 250, 255);
+    textSize(40);
+    text("Press SPACE to start",xStartBtn + 5,yStartBtn + 59);
+    fill(250, 250, 37);textSize(80);
+
+    text("Banana Peel", xStartBtn - 35, yStartBtn - 50)
+
+};
+ 
 /**
  * Tekent het speelveld
  */
 var tekenVeld = function () {
-  fill("purple");
+  fill(3, 236, 252);
   rect(20, 20, width - 2 * 20, height - 2 * 20);
 };
 
@@ -167,6 +189,12 @@ function setup() {
  */
 function draw() {
   switch (spelStatus) {
+    case STARTSCHERM:
+        tekenStartscherm();
+        if (keyIsDown(32)) {// 32=spatie
+           spelStatus = SPELEN;
+        }
+        break;
     case SPELEN:
       beweegVijand();
       beweegKogel();
