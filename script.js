@@ -48,29 +48,41 @@ var score = 0; // aantal behaalde punten
  * Tekent het startscherm
  */
 var tekenStartscherm = function () {
-<<<<<<< HEAD
-    
+
+
     background(0,0,0);
+    
 
     fill(250, 180, 60);
     rect(xStartBtn,yStartBtn, 390,100);
     
     fill(250, 250, 255);
     textSize(40);
+    // @ts-ignore
     text("Press SPACE to start",xStartBtn + 5,yStartBtn + 59);
-    fill(250, 250, 37);textSize(80);
+    
 
-    text("Banana Peel", xStartBtn - 35, yStartBtn - 50)
+    fill(250, 250, 37);
+    textSize(80);
+
+    // @ts-ignore
+    text("Banana Peel", xStartBtn - 35, yStartBtn - 15); 
 
 };
  
 /**
  * Tekent het speelveld
  */
-var tekenVeld = function () {
-  fill(3, 236, 252);
-  rect(20, 20, width - 2 * 20, height - 2 * 20);
+var tekenVeldAchter = function () {
+    fill(130, 106, 78);
+    rect(20, 20, width - 2 * 20, height - 2 * 20);
+
 };
+
+var tekenVeldVoor = function () {
+    fill(0,0,0);
+    rect(20,200, width - 100 , 40);
+}
 
 
 /**
@@ -128,12 +140,20 @@ var beweegKogel = function() {
  */
 var beweegSpeler = function() {
 
-        if (spelerX >= 400) {
-        spelerX = 0;
-      }
+ spelerY = spelerY + 1;
+ if (spelerY > 200) {
+     spelerY = 200;
+ }
+ if (keyIsDown(32)) { //spatie
+  spelerY = 200 -100;
+ }
 
-      if (keyIsDown(37)) { // 37=left arrow
+ if (keyIsDown(37)) { // 37=left arrow
         spelerX = spelerX - 5;
+      } else if (keyIsDown(39)) { // 39=right arrow 
+          spelerX = spelerX + 5;
+      } else if (keyIsDown(38)) { // 38=up arrow
+          spelerY = spelerY + 20;
       }
 };
 
@@ -178,7 +198,7 @@ function setup() {
   createCanvas(1280, 720);
 
   // Kleur de achtergrond blauw, zodat je het kunt zien
-  background('blue');
+  background(0,0,0);
 }
 
 
@@ -196,6 +216,8 @@ function draw() {
         }
         break;
     case SPELEN:
+        tekenVeldAchter();
+        tekenVeldVoor();
       beweegVijand();
       beweegKogel();
       beweegSpeler();
@@ -212,9 +234,7 @@ function draw() {
         // leven eraf of gezondheid verlagen
         // eventueel: nieuwe speler maken
       }
-
-      tekenVeld();
-      tekenVijand(vijandX, vijandY);
+    tekenVijand(vijandX, vijandY);
       tekenKogel(kogelX, kogelY);
       tekenSpeler(spelerX, spelerY);
 
