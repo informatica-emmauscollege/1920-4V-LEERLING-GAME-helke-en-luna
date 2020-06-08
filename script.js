@@ -139,18 +139,21 @@ var beweegKogel = function() {
  * Updatet globale variabele spelerX en spelerY
  */
 var beweegSpeler = function() {
+ spelerY = spelerY + 5;
 
  if (spelerY > 200) {
      spelerY = 200;
  }
 
+
  if (keyIsDown(37)) { // 37=left arrow
         spelerX = spelerX - 5;
       } else if (keyIsDown(39)) { // 39=right arrow 
           spelerX = spelerX + 5;
-      } else if (keyIsPressed === 38) { // 38=up arrow
+      } else if (keyIsPressed === true) { // 38=up arrow
+         if (keyCode === 38)
           spelerY = spelerY - 10;
-      }
+      } 
 };
 
 /**
