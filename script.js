@@ -23,7 +23,7 @@ const GAMEOVER = 2;
 var spelStatus = STARTSCHERM;
 
 var spelerX = 200; // x-positie van speler
-var spelerY = 100; // y-positie van speler
+var spelerY = 20; // y-positie van speler
 
 var kogelX = 0;    // x-positie van kogel
 var kogelY = 0;    // y-positie van kogel
@@ -139,6 +139,7 @@ var beweegKogel = function() {
  * Updatet globale variabele spelerX en spelerY
  */
 var beweegSpeler = function() {
+
  spelerY = spelerY + 1;
  if (spelerY > 200) {
      spelerY = 200;
@@ -146,8 +147,11 @@ var beweegSpeler = function() {
  if (keyIsDown(32)) { //spatie
   spelerY = 200 -100;
  }
-};
 
+ if (keyIsDown(37)) { // 37=left arrow
+        spelerX = spelerX - 5;
+      }
+};
 
 /**
  * Zoekt uit of de vijand is geraakt
@@ -213,6 +217,9 @@ function draw() {
       beweegVijand();
       beweegKogel();
       beweegSpeler();
+
+       
+
       
       if (checkVijandGeraakt()) {
         // punten erbij
