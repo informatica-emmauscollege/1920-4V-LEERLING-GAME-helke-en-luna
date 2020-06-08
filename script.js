@@ -140,8 +140,7 @@ var beweegKogel = function() {
  */
 var beweegSpeler = function() {
 
- 
-    if (spelerY > 200) {
+ if (spelerY > 200) {
      spelerY = 200;
  }
 
