@@ -84,7 +84,9 @@ var tekenVeldAchter = function () {
 
 var tekenVeldVoor = function () {
     fill(0,0,0);
-    rect(20,200, width - 100 , 40);
+    rect(20,200, width - 100 , 40); //platform1
+    rect(20,300, width - 300, 40); // platform2
+    rect(70, 400, width - 400, 40); // platform3
 }
 
 
