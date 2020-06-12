@@ -23,10 +23,10 @@ const GAMEOVER = 2;
 var spelStatus = STARTSCHERM;
 
 var speler1X = 200; // x-positie van speler1
-var speler1Y = 200; // y-positie van speler1
+var speler1Y = 800; // y-positie van speler1
 
 var speler2X = 400; // x-positie van speler2
-var speler2Y = 400; // y-positie van speler2
+var speler2Y = 800; // y-positie van speler2
 
 var kogelX = 0;    // x-positie van kogel
 var kogelY = 0;    // y-positie van kogel
