@@ -94,6 +94,9 @@ var tekenVeldVoor = function () {
     rect(800, 480, 690, 40 ); // platformlvl3
 
     rect(0,680, width, 40); //platformlvl4
+
+    rect(0,0,40, height); //zijkantLinks
+    rect(1240, 0, 40, height); //zijkantRechts
 }
 
 
