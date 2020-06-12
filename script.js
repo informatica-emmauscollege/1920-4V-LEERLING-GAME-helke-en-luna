@@ -23,10 +23,10 @@ const GAMEOVER = 2;
 var spelStatus = STARTSCHERM;
 
 var speler1X = 200; // x-positie van speler1
-var speler1Y = 200; // y-positie van speler1
+var speler1Y = 800; // y-positie van speler1
 
 var speler2X = 400; // x-positie van speler2
-var speler2Y = 400; // y-positie van speler2
+var speler2Y = 800; // y-positie van speler2
 
 var kogelX = 0;    // x-positie van kogel
 var kogelY = 0;    // y-positie van kogel
@@ -84,9 +84,16 @@ var tekenVeldAchter = function () {
 
 var tekenVeldVoor = function () {
     fill(0,0,0);
-    rect(20,200, width - 100 , 40); //platform1
-    rect(20,300, width - 300, 40); // platform2
-    rect(70, 400, width - 400, 40); // platform3
+    rect(0,0, width, 40); //platformlvl0
+
+    rect(20,200, width - 200 , 40); //platformlvl1
+
+    rect(200,340, width, 40); // platformlvl2
+
+    rect(20, 480, width - 590, 40); // platformlvl3
+    rect(800, 480, 690, 40 ); // platformlvl3
+
+    rect(0,680, width, 40); //platformlvl4
 }
 
 
