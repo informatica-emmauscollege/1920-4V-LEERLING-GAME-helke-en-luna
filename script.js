@@ -117,8 +117,14 @@ var tekenVijand = function(x, y) {
  * @param {number} y y-coördinaat
  */
 var tekenKogel = function(x, y) {
+    fill(143, 219, 255);
+    ellipse(600, 180, 20,20); //item1
 
+    ellipse(400, 320, 20,20); //item2
 
+    ellipse(1100,460,20,20); //item3
+
+    ellipse(90,660,20,20); //item4
 };
 
 
