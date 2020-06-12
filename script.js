@@ -23,10 +23,10 @@ const GAMEOVER = 2;
 var spelStatus = STARTSCHERM;
 
 var speler1X = 200; // x-positie van speler1
-var speler1Y = 800; // y-positie van speler1
+var speler1Y = 175; // y-positie van speler1
 
 var speler2X = 400; // x-positie van speler2
-var speler2Y = 800; // y-positie van speler2
+var speler2Y = 175; // y-positie van speler2
 
 var kogelX = 0;    // x-positie van kogel
 var kogelY = 0;    // y-positie van kogel
@@ -161,10 +161,20 @@ var beweegKogel = function() {
 var beweegSpeler1 = function() {
  speler1Y = speler1Y + 5;
 
- if (speler1Y > 200) {
-     speler1Y = 200;
+ if (speler1Y > 175 && speler1X < 1100) {
+     speler1Y = 175;
  }
 
+ if (speler1Y > 315) {
+     speler1Y = 315;
+ }
+
+  if (speler1X < 65) {
+      speler1X = 65;
+  }
+  if (speler1X > 1215) {
+      speler1X = 1215;
+  }
 
  if (keyIsDown(37)) { // 37=left arrow
         speler1X = speler1X - 5;
@@ -181,10 +191,16 @@ var beweegSpeler1 = function() {
 var beweegSpeler2 = function() {
  speler2Y = speler2Y + 5;
 
- if (speler2Y > 200) {
-     speler2Y = 200;
+  if (speler2Y > 175 && speler2X < 1100) {
+     speler2Y = 175;
  }
 
+ if (speler2X < 65) {
+      speler2X = 65;
+  }
+  if (speler2X > 1215) {
+      speler2X = 1215;
+  }
 
  if (keyIsDown(65)) { // 65=a
         speler2X = speler2X - 5;
