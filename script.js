@@ -179,8 +179,7 @@ var beweegSpeler1 = function() {
      speler1Y = 315;
  }
 
- // @ts-ignore
- if (speler1Y > 455 && speler1Y < 535 && speler1X < 715 speler1X > 775) {
+ if (speler1Y > 455 && speler1Y < 535 && speler1X < 715 && speler1X > 775) {
      speler1Y = 455;
  }
 
