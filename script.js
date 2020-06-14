@@ -156,7 +156,7 @@ var beweegVijand = function() {
  * Updatet globale variabelen met positie van kogel of bal
  */
 var beweegKogel = function() {
-
+   
 };
 
 
@@ -171,7 +171,7 @@ var beweegSpeler1 = function() {
      speler1Y = 175;
      if (keyIsPressed === true) { 
          if (keyCode === 38) // 38=up arrow
-          speler1Y = 185;
+          speler1Y = 165;
       } 
  }
 
@@ -179,9 +179,11 @@ var beweegSpeler1 = function() {
      speler1Y = 315;
  }
 
- if (speler1Y > 455 && speler1Y < 535 && speler1X < 715 && speler1X > 775) {
+ if (speler1Y > 455 && speler1Y < 535) {
      speler1Y = 455;
  }
+ 
+ // speler blijft in het speelveld
 
   if (speler1X < 65) {
       speler1X = 65;
@@ -189,6 +191,8 @@ var beweegSpeler1 = function() {
   if (speler1X > 1215) {
       speler1X = 1215;
   }
+
+ // speler bewegen met keys
 
  if (keyIsDown(37)) { // 37=left arrow
         speler1X = speler1X - 5;
@@ -213,6 +217,7 @@ var beweegSpeler2 = function() {
      speler2Y = 455;
  }
 
+ // speler blijft in het speelveld
 
  if (speler2X < 65) {
       speler2X = 65;
@@ -220,6 +225,8 @@ var beweegSpeler2 = function() {
   if (speler2X > 1215) {
       speler2X = 1215;
   }
+
+ // speler bewegen met keys
 
  if (keyIsDown(65)) { // 65=a
         speler2X = speler2X - 5;
