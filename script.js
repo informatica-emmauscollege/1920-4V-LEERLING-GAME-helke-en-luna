@@ -106,8 +106,7 @@ var tekenVeldVoor = function () {
  * @param {number} y y-coördinaat
  */
 var tekenVijand = function(x, y) {
-    
-
+    rect(600, 680, 60, 100);
 };
 
 
