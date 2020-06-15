@@ -38,6 +38,7 @@ var xStartBtn = 460 // x-positie startknop
 var yStartBtn = 320 // y-positie startknop
 
 var score = 0; // aantal behaalde punten
+var messageScore = "Score:   ";
 
 
 
@@ -106,7 +107,7 @@ var tekenVeldVoor = function () {
  * @param {number} y y-coördinaat
  */
 var tekenVijand = function(x, y) {
-    rect(600, 680, 60, 100);
+    
 };
 
 
@@ -170,7 +171,7 @@ var beweegSpeler1 = function() {
      speler1Y = 175;
      if (keyIsPressed === true) { 
          if (keyCode === 38) // 38=up arrow
-          speler1Y = 165;
+          speler1Y = 155;
       } 
  }
 
@@ -248,6 +249,10 @@ var checkVijandGeraakt = function() {
   return false;
 };
 
+var checkKogelGeraakt = function() {
+    
+
+};
 
 /**
  * Zoekt uit of de speler is geraakt
@@ -255,8 +260,17 @@ var checkVijandGeraakt = function() {
  * @returns {boolean} true als speler is geraakt
  */
 var checkSpelerGeraakt = function() {
-    
+    if(checkKogelGeraakt){
+        score = score + 50;
+    }
   return false;
+};
+
+
+var tekenScore = function() {
+    fill(250,250,250);
+    text(messageScore + score, 20, 50, 100, 100);
+
 };
 
 
