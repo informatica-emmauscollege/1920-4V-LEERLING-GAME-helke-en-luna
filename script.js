@@ -367,7 +367,7 @@ function draw() {
         // leven eraf of gezondheid verlagen
         // eventueel: nieuwe speler maken
       }
-    tekenEinde(vijandX, vijandY);
+    tekenEinde(eindeX, eindeY);
       tekenKogel(kogelX, kogelY);
       tekenSpeler1(speler1X, speler1Y);
       tekenSpeler2(speler2X, speler2Y);
