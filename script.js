@@ -31,8 +31,8 @@ var speler2Y = 175; // y-positie van speler2
 var kogelX = 0;    // x-positie van kogel
 var kogelY = 0;    // y-positie van kogel
 
-var vijandX = 0;   // x-positie van vijand
-var vijandY = 0;   // y-positie van vijand
+var eindeX = 1000;   // x-positie van vijand
+var eindeY = 575;   // y-positie van vijand
 
 var xStartBtn = 460 // x-positie startknop
 var yStartBtn = 320 // y-positie startknop
@@ -102,12 +102,14 @@ var tekenVeldVoor = function () {
 
 
 /**
- * Tekent de vijand
+ * Tekent het einde
  * @param {number} x x-coördinaat
  * @param {number} y y-coördinaat
  */
-var tekenVijand = function(x, y) {
-    
+
+var tekenEinde = function(x, y) {
+    fill(255, 150, 210);
+    rect(eindeX, eindeY, 60, 80);
 };
 
 
@@ -147,7 +149,7 @@ var tekenSpeler2 = function(x, y) {
 /**
  * Updatet globale variabelen met positie van vijand of tegenspeler
  */
-var beweegVijand = function() {
+var beweegEinde = function(x,y) {
     
 };
 
@@ -177,10 +179,23 @@ var beweegSpeler1 = function() {
 
  if (speler1Y > 315 && speler1Y < 395 && speler1X > 175) {
      speler1Y = 315;
+     if (keyIsPressed === true) { 
+         if (keyCode === 38) // 38=up arrow
+          speler1Y = 295;
  }
 
  if (speler1Y > 455 && speler1Y < 535) {
      speler1Y = 455;
+     if (keyIsPressed === true) { 
+         if (keyCode === 38) // 38=up arrow
+          speler1Y = 435;
+ }
+  if (speler1Y > 655) {
+     speler1Y = 655;
+     if (keyIsPressed === true) { 
+         if (keyCode === 38) // 38=up arrow
+          speler1Y = 645;
+ }
  }
  
  // speler blijft in het speelveld
@@ -207,14 +222,35 @@ var beweegSpeler2 = function() {
 
   if (speler2Y > 175 && speler2Y < 215 && speler2X < 1100) {
      speler2Y = 175;
+     if (keyIsPressed === true) { 
+         if (keyCode === 38) // 38=up arrow
+          speler2Y = 165;
+ }
  }
 
   if (speler2Y > 315 && speler2Y < 355 && speler2X > 175) {
      speler2Y = 315;
+     if (keyIsPressed === true) { 
+         if (keyCode === 38) // 38=up arrow
+          speler2Y = 295;
+ }
  }
  
  if (speler2Y > 455) {
      speler2Y = 455;
+     if (keyIsPressed === true) { 
+         if (keyCode === 38) // 38=up arrow
+          speler2Y = 435;
+ }
+
+ if (speler2Y > 655) {
+     speler2Y = 655;
+     if (keyIsPressed === true) { 
+         if (keyCode === 38) // 38=up arrow
+          speler2Y = 645;
+ }
+ }
+
  }
 
  // speler blijft in het speelveld
@@ -244,7 +280,7 @@ var beweegSpeler2 = function() {
  * Zoekt uit of de vijand is geraakt
  * @returns {boolean} true als vijand is geraakt
  */
-var checkVijandGeraakt = function() {
+var checkEindeGeraakt = function() {
 
   return false;
 };
@@ -314,7 +350,7 @@ function draw() {
     case SPELEN:
         tekenVeldAchter();
         tekenVeldVoor();
-      beweegVijand();
+      beweegEinde();
       beweegKogel();
       beweegSpeler1();
       beweegSpeler2();
@@ -322,7 +358,7 @@ function draw() {
        
 
       
-      if (checkVijandGeraakt()) {
+      if (checkEindeGeraakt()) {
         // punten erbij
         // nieuwe vijand maken
       }
@@ -331,7 +367,7 @@ function draw() {
         // leven eraf of gezondheid verlagen
         // eventueel: nieuwe speler maken
       }
-    tekenVijand(vijandX, vijandY);
+    tekenEinde(vijandX, vijandY);
       tekenKogel(kogelX, kogelY);
       tekenSpeler1(speler1X, speler1Y);
       tekenSpeler2(speler2X, speler2Y);
