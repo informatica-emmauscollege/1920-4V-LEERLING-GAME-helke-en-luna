@@ -28,8 +28,17 @@ var speler1Y = 175; // y-positie van speler1
 var speler2X = 400; // x-positie van speler2
 var speler2Y = 175; // y-positie van speler2
 
-var kogelX = 0;    // x-positie van kogel
-var kogelY = 0;    // y-positie van kogel
+var kogel1X = 600;    // x-positie van kogel
+var kogel1Y = 180;    // y-positie van kogel
+
+var kogel2X = 400;
+var kogel2Y = 320;
+
+var kogel3X = 1100;
+var kogel3Y = 460;
+
+var kogel4X = 90;
+var kogel4Y = 660;
 
 var eindeX = 1000;   // x-positie van vijand
 var eindeY = 575;   // y-positie van vijand
@@ -124,9 +133,9 @@ var tekenKogel = function(x, y) {
 
     ellipse(400, 320, 20,20); //item2
 
-    ellipse(1100,460,20,20); //item3
+    ellipse(1100, 460,20,20); //item3
 
-    ellipse(90,660,20,20); //item4
+    ellipse(90, 660,20,20); //item4
 };
 
 
@@ -285,9 +294,26 @@ var checkEindeGeraakt = function() {
   return false;
 };
 
-var checkKogelGeraakt = function() {
-    
+var tekenScore = function() {
+    fill(250,250,250);
+    text(messageScore + score, 20, 50, 100, 100);
 
+};
+
+
+var checkKogelGeraakt = function() {
+    if(speler1X > 575 && speler1X < 625 && speler1Y > 155 && speler1Y < 205){ //kogel1 geraakt
+        score = score + 50;
+    }
+    if(speler1X > 375 && speler1X < 425 && speler1Y > 295 && speler1Y < 335){ //kogel2 geraakt
+        score = score + 50;
+    }
+    if(speler1X > 1075 && speler1X < 1125 && speler1Y > 435 && speler1Y < 485){ //kogel3 geraakt
+        score = score + 50;
+    }
+    if(speler1X > 65 && speler1X < 115 && speler1Y > 635 && speler1Y < 685){ //kogel4 geraakt
+        score = score + 50;
+    }
 };
 
 /**
@@ -296,18 +322,12 @@ var checkKogelGeraakt = function() {
  * @returns {boolean} true als speler is geraakt
  */
 var checkSpelerGeraakt = function() {
-    if(checkKogelGeraakt){
-        score = score + 50;
-    }
+    
   return false;
 };
 
 
-var tekenScore = function() {
-    fill(250,250,250);
-    text(messageScore + score, 20, 50, 100, 100);
 
-};
 
 
 /**
@@ -363,12 +383,18 @@ function draw() {
         // nieuwe vijand maken
       }
       
+      /*if(checkKogelGeraakt()){
+
+        stop met het tekenen van de kogel
+
+    } */
+
       if (checkSpelerGeraakt()) {
         // leven eraf of gezondheid verlagen
         // eventueel: nieuwe speler maken
       }
     tekenEinde(eindeX, eindeY);
-      tekenKogel(kogelX, kogelY);
+      tekenKogel(kogel1X, kogel1Y);
       tekenSpeler1(speler1X, speler1Y);
       tekenSpeler2(speler2X, speler2Y);
 
