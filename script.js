@@ -40,7 +40,7 @@ var kogel3Y = 460;
 var kogel4X = 90;
 var kogel4Y = 660;
 
-var eindeX = 1220;   // x-positie van vijand
+var eindeX = 1180;   // x-positie van vijand
 var eindeY = 600;   // y-positie van vijand
 
 var xStartBtn = 460 // x-positie startknop
@@ -145,14 +145,24 @@ var tekenKogel = function(x, y) {
  * @param {number} y y-coördinaat
  */
 var tekenSpeler1 = function(x, y) {
-  fill("white");
-  ellipse(x, y, 50, 50);
+  fill("blue");
+  image(imgVuurmeisje,x,y);
 };
+
+var imgVuurmeisje;
+function preload() {
+    imgVuurmeisje = loadImage('./fotos/firegirl.png');
+}
 
 var tekenSpeler2 = function(x, y) {
   fill("red");
-  ellipse(x, y, 50, 50);
+  image(imgWaterjongen, x, y);
 };
+
+var imgWaterjongen;
+function preload() {
+    imgWaterjongen = loadImage('./fotos/waterboy.png');
+}
 
 
 /**
@@ -204,7 +214,7 @@ var beweegSpeler1 = function() {
          }
  }
 }
-  if (speler1Y > 655 && speler1Y < 735 && speler1X < 1280 - 590 ) {
+  if (speler1Y > 655 && speler1Y < 735 && speler1X < width - 590 && speler1X > ) {
      speler1Y = 655;
      if (keyIsPressed === true) { 
          if (keyCode === 38) { // 38=uparrow
@@ -217,7 +227,7 @@ var beweegSpeler1 = function() {
 
   if (speler1X < 65) {
       speler1X = 65;
-  }
+  } 
   if (speler1X > 1215) {
       speler1X = 1215;
   }
