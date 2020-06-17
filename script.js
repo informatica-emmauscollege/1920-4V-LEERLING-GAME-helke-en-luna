@@ -268,7 +268,7 @@ var beweegSpeler2 = function() {
           speler2Y = 645;
          }
  }
- }
+ } 
 
 
 
@@ -304,7 +304,7 @@ var beweegSpeler2 = function() {
 var checkEindeGeraakt = function() {
 
   return false;
-};
+}; 
 
 var tekenScore = function() {
     fill(250,250,250);
@@ -387,8 +387,7 @@ function draw() {
 
       
       if (checkEindeGeraakt()) {
-        // punten erbij
-        // nieuwe vijand maken
+          
       }
       
       /*if(checkKogelGeraakt()){
