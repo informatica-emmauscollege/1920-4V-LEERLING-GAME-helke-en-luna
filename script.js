@@ -40,7 +40,7 @@ var kogel3Y = 460;
 var kogel4X = 90;
 var kogel4Y = 660;
 
-var eindeX = 1220;   // x-positie van vijand
+var eindeX = 1180;   // x-positie van vijand
 var eindeY = 600;   // y-positie van vijand
 
 var xStartBtn = 460 // x-positie startknop
