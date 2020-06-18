@@ -177,8 +177,13 @@ var beweegEinde = function(x,y) {
 /**
  * Updatet globale variabelen met positie van kogel of bal
  */
+
+ var kogelIntact = 0;
 var beweegKogel = function() {
-   
+   while (kogelIntact < 0) {
+     if (
+
+   }
 };
 
 
