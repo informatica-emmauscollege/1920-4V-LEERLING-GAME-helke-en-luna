@@ -132,13 +132,11 @@ var tekenEinde = function(x, y) {
  */
 var tekenKogel = function(x, y) {
     fill(143, 219, 255);
-    ellipse(600, 180, 20,20); //item1
-
-    ellipse(400, 320, 20,20); //item2
-
-    ellipse(1100, 460,20,20); //item3
-
-    ellipse(90, 660,20,20); //item4
+     
+     ellipse(600, 180, 20,20); //item1
+     ellipse(400, 320, 20,20); //item2
+     ellipse(1100, 460,20,20); //item3
+     ellipse(90, 660,20,20); //item4
 };
 
 
@@ -149,18 +147,20 @@ var tekenKogel = function(x, y) {
  */
 var tekenSpeler1 = function(x, y) {
   fill("blue");
-  image(imgVuurmeisje,80,150, 50,50);
+  ellipse(speler1X,speler1Y,50,50);
+  /*image(imgVuurmeisje,80,150, 50,50); */
 };
-
+/*
 function preload() {
     imgVuurmeisje = loadImage('fotos/firegirl.png');
-}
+}*/
 
 var tekenSpeler2 = function(x, y) {
   fill("red");
-  image(imgWaterjongen, 100, 150,50,50);
+  ellipse(speler2X,speler2Y,50,50);
+  /*image(imgWaterjongen, 100, 150,50,50); */
 };
-
+/*
 function preload() {
     imgWaterjongen = loadImage('fotos/waterboy.png');
 }
@@ -178,13 +178,11 @@ var beweegEinde = function(x,y) {
  * Updatet globale variabelen met positie van kogel of bal
  */
 
- var kogelIntact = 0;
 var beweegKogel = function() {
-   while (kogelIntact < 0) {
-     if (
-
-   }
-};
+     if (speler1X > 575 && speler1X < 625 && speler1Y > 155 && speler1Y < 205) {
+       
+     }
+}
 
 
 /**
@@ -312,7 +310,9 @@ var beweegSpeler2 = function() {
  * @returns {boolean} true als vijand is geraakt
  */
 var checkEindeGeraakt = function() {
-
+    if (speler1X > 1180 && speler1X < 1240 && speler1Y > 600 && speler1Y < 680 && speler2X > 1180 && speler2X < 1240 && speler2Y > 600 && speler2Y < 680) {
+        spelStatus = GAMEOVER;
+    }
   return false;
 }; 
 
@@ -411,7 +411,7 @@ function draw() {
 
       
       if (checkEindeGeraakt()) {
-          
+          spelStatus = GAMEOVER;
       }
       
       /*if(checkKogelGeraakt()){
