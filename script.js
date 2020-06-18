@@ -348,7 +348,7 @@ var tekenEindscherm = function() {
     textSize(80);
 
     // @ts-ignore
-    text("YOU WON", xEindBtn - 35, yEindBtn - 15); 
+    text("You did it!", xEindBtn - 35, yEindBtn - 15); 
 
 };
 
