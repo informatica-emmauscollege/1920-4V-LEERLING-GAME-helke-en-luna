@@ -49,6 +49,9 @@ var yStartBtn = 320 // y-positie startknop
 var score = 0; // aantal behaalde punten
 var messageScore = "Score:   ";
 
+var imgVuurmeisje;
+var imgWaterjongen;
+
 
 
 
@@ -146,22 +149,20 @@ var tekenKogel = function(x, y) {
  */
 var tekenSpeler1 = function(x, y) {
   fill("blue");
-  image(imgVuurmeisje,x,y);
+  image(imgVuurmeisje,80,150, 50,50);
 };
 
-var imgVuurmeisje;
 function preload() {
-    imgVuurmeisje = loadImage('./fotos/firegirl.png');
+    imgVuurmeisje = loadImage('fotos/firegirl.png');
 }
 
 var tekenSpeler2 = function(x, y) {
   fill("red");
-  image(imgWaterjongen, x, y);
+  image(imgWaterjongen, 100, 150,50,50);
 };
 
-var imgWaterjongen;
 function preload() {
-    imgWaterjongen = loadImage('./fotos/waterboy.png');
+    imgWaterjongen = loadImage('fotos/waterboy.png');
 }
 
 
@@ -214,7 +215,7 @@ var beweegSpeler1 = function() {
          }
  }
 }
-  if (speler1Y > 655 && speler1Y < 735 && speler1X < width - 590 && speler1X > ) {
+  if (speler1Y > 655 && speler1Y < 735 && speler1X < width - 590 && speler1X > 480) {
      speler1Y = 655;
      if (keyIsPressed === true) { 
          if (keyCode === 38) { // 38=uparrow
