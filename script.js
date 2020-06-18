@@ -177,8 +177,13 @@ var beweegEinde = function(x,y) {
 /**
  * Updatet globale variabelen met positie van kogel of bal
  */
+
+ var kogelIntact = 0;
 var beweegKogel = function() {
-   
+   while (kogelIntact < 0) {
+     if (
+
+   }
 };
 
 
@@ -331,9 +336,21 @@ var tekenEindscherm = function() {
 
     background(0, 0, 0);
 
+    fill(138, 63, 63);
+    rect(xEindBtn,yEindBtn, 390,100);
 
+    fill(250, 250, 255);
+    textSize(40);
+    // @ts-ignore
+    text("Press SPACE to start over",xStartBtn + 5,yStartBtn + 59);
 
-}
+    fill(250, 250, 37);
+    textSize(80);
+
+    // @ts-ignore
+    text("YOU WON", xEindBtn - 35, yEindBtn - 15); 
+
+};
 
 /**
  * Zoekt uit of de speler is geraakt
@@ -417,6 +434,9 @@ function draw() {
       }
       break;
     case GAMEOVER:
-        //tekenEindscherm
+        tekenEindscherm();
+        if (keyIsDown(32)) {
+            spelStatus = STARTSCHERM;
+        }
   }
 };
