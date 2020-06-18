@@ -43,14 +43,14 @@ var kogel4Y = 660;
 var eindeX = 1180;   // x-positie van vijand
 var eindeY = 600;   // y-positie van vijand
 
-var xStartBtn = 460 // x-positie startknop
-var yStartBtn = 320 // y-positie startknop
-
-var score = 0; // aantal behaalde punten
-var messageScore = "Score:   ";
+var xStartBtn = 460; // x-positie startknop
+var yStartBtn = 320; // y-positie startknop
 
 var imgVuurmeisje;
 var imgWaterjongen;
+
+var xEindBtn = 460;
+var yEindBtn = 320;
 
 
 
@@ -311,27 +311,29 @@ var checkEindeGeraakt = function() {
   return false;
 }; 
 
-var tekenScore = function() {
-    fill(250,250,250);
-    text(messageScore + score, 20, 50, 100, 100);
-
-}; 
-
 
 var checkKogelGeraakt = function() {
     if(speler1X > 575 && speler1X < 625 && speler1Y > 155 && speler1Y < 205){ //kogel1 geraakt
-        score = score + 50;
+       
     }
     if(speler1X > 375 && speler1X < 425 && speler1Y > 295 && speler1Y < 335){ //kogel2 geraakt
-        score = score + 50;
+        
     }
     if(speler1X > 1075 && speler1X < 1125 && speler1Y > 435 && speler1Y < 485){ //kogel3 geraakt
-        score = score + 50;
+        
     }
     if(speler1X > 65 && speler1X < 115 && speler1Y > 635 && speler1Y < 685){ //kogel4 geraakt
-        score = score + 50;
+       
     }
 }; 
+
+var tekenEindscherm = function() {
+
+    background(0, 0, 0);
+
+
+
+}
 
 /**
  * Zoekt uit of de speler is geraakt
@@ -414,5 +416,7 @@ function draw() {
         spelStatus = GAMEOVER;
       }
       break;
+    case GAMEOVER:
+        //tekenEindscherm
   }
 };
