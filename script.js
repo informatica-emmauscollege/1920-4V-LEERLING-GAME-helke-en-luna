@@ -75,7 +75,7 @@ var tekenStartscherm = function () {
     fill(250, 250, 255);
     textSize(40);
     // @ts-ignore
-    text("Press SPACE to start",xStartBtn + 5,yStartBtn + 59);
+    text("Press ENTER to start",xStartBtn + 5,yStartBtn + 59);
     
 
     fill(250, 250, 37);
@@ -277,22 +277,23 @@ var beweegSpeler2 = function() {
  }
  }
  
- if (speler2Y > 455) {
+ if (speler2Y > 455 && speler2Y < 535 && speler2X > width - 430) {
      speler2Y = 455;
      if (keyIsPressed === true) { 
-         if (keyCode === 87){ // 87=w
-          speler2Y = 415;
+         if (keyCode === 38) { // 32=up arrow
+          speler2Y = 425;
          }
  }
- }
- if (speler2Y > 655) {
+} 
+
+  if (speler2Y > 655 && speler2Y < 735) {
      speler2Y = 655;
      if (keyIsPressed === true) { 
-         if (keyCode === 87) { // 87=w
+         if (keyCode === 38) { // 38=uparrow
           speler2Y = 625;
          }
  }
- } 
+ }
 
 
 
@@ -405,7 +406,7 @@ function draw() {
   switch (spelStatus) {
     case STARTSCHERM: 
         tekenStartscherm();
-        if (keyIsDown(32)) {// 32=spatie
+        if (keyIsDown(13)) {// 13=enter
            spelStatus = SPELEN;
         }
         break;
