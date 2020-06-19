@@ -34,12 +34,15 @@ var kogel1Aanwezig = true;
 
 var kogel2X = 400;
 var kogel2Y = 320;
+var kogel2Aanwezig = true;
 
 var kogel3X = 1100;
 var kogel3Y = 460;
+var kogel3Aanwezig = true;
 
 var kogel4X = 90;
 var kogel4Y = 660;
+var kogel4Aanwezig = true;
 
 var eindeX = 1180;   // x-positie van einde
 var eindeY = 600;   // y-positie van einde
@@ -143,9 +146,15 @@ var tekenKogel = function(x, y) {
     if (kogel1Aanwezig === true) {
       ellipse(600, 180, 20,20); //item1
     }
-     ellipse(400, 320, 20,20); //item2
+    if (kogel2Aanwezig === true) {
+      ellipse(400, 320, 20,20); //item2
+    }
+    if (kogel3Aanwezig === true) {
      ellipse(1100, 460,20,20); //item3
+    }
+    if (kogel4Aanwezig === true) {
      ellipse(90, 660,20,20); //item4
+    }
 };
 
 
@@ -347,18 +356,21 @@ var checkEindeGeraakt = function() {
 
 
 var checkKogelGeraakt = function() {
-    if(speler1X > 575 && speler1X < 625 && speler1Y > 155 && speler1Y < 205){ //kogel1 geraakt
+    if(speler1X > 575 && speler1X < 625 && speler2Y > 155 && speler2Y < 205 && speler2X > 575 && speler2X < 625 && speler2Y > 155 && speler2Y < 205){ //kogel1 geraakt
        console.log("kogel1 geraakt");
        kogel1Aanwezig = false;
     }
-    if(speler1X > 375 && speler1X < 425 && speler1Y > 295 && speler1Y < 335){ //kogel2 geraakt
-        
+    if(speler1X > 375 && speler1X < 425 && speler2Y > 295 && speler2Y < 335 && speler2X > 375 && speler2X < 425 && speler2Y > 295 && speler2Y < 335){ //kogel2 geraakt
+        console.log("kogel2 geraakt");
+       kogel2Aanwezig = false;
     }
-    if(speler1X > 1075 && speler1X < 1125 && speler1Y > 435 && speler1Y < 485){ //kogel3 geraakt
-        
+    if(speler1X > 1075 && speler1X < 1125 && speler2Y > 435 && speler2Y < 485 && speler2X > 1075 && speler2X < 1125 && speler2Y > 435 && speler2Y < 485){ //kogel3 geraakt
+        console.log("kogel3 geraakt");
+       kogel3Aanwezig = false;
     }
-    if(speler1X > 65 && speler1X < 115 && speler1Y > 635 && speler1Y < 685){ //kogel4 geraakt
-       
+    if(speler1X > 65 && speler1X < 115 && speler2Y > 635 && speler2Y < 685 && speler2X > 65 && speler2X < 115 && speler2Y > 635 && speler2Y < 685){ //kogel4 geraakt
+       console.log("kogel4 geraakt");
+       kogel4Aanwezig = false;
     }
 }; 
 
@@ -366,19 +378,16 @@ var tekenEindscherm = function() {
 
     background(0, 0, 0);
 
-    fill(138, 63, 63);
-    rect(xEindBtn,yEindBtn, 390,100);
-
     fill(250, 250, 255);
     textSize(40);
     // @ts-ignore
-    text("Reload page to start over",xStartBtn + 5,yStartBtn + 59);
+    text("Reload page to start over",xStartBtn - 50,yStartBtn + 60);
 
     fill(250, 250, 37);
     textSize(80);
 
     // @ts-ignore
-    text("You did it!", xEindBtn - 35, yEindBtn - 15); 
+    text("You did it!", xEindBtn + 3, yEindBtn - 15); 
 
 };
 
