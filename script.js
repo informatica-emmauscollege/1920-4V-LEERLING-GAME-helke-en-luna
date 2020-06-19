@@ -40,8 +40,8 @@ var kogel3Y = 460;
 var kogel4X = 90;
 var kogel4Y = 660;
 
-var eindeX = 1180;   // x-positie van vijand
-var eindeY = 600;   // y-positie van vijand
+var eindeX = 1180;   // x-positie van einde
+var eindeY = 600;   // y-positie van einde
 
 var xStartBtn = 460; // x-positie startknop
 var yStartBtn = 320; // y-positie startknop
@@ -180,7 +180,7 @@ var beweegEinde = function(x,y) {
 
 var beweegKogel = function() {
      if (speler1X > 575 && speler1X < 625 && speler1Y > 155 && speler1Y < 205) {
-       
+
      }
 }
 
