@@ -72,6 +72,14 @@ var tekenStartscherm = function () {
 
     background(0,0,0);
     
+    fill('white');
+    textSize(30);
+    text("Speler 1 (blauw): gebruik WASD om te bewegen", 20,20,700,40);
+
+    fill('white');
+    textSize(30);
+    text("Speler 2 (rood): gebruik pijltjes om te bewegen", 20,70,700,40);
+
 
     fill(250, 180, 60);
     rect(xStartBtn,yStartBtn, 390,100);
