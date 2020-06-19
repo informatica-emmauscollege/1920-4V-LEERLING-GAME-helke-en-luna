@@ -237,7 +237,7 @@ var beweegSpeler1 = function() {
  }
 } 
 
- if (speler1Y > 455 && speler1Y < 535 && speler1X > 775) { // platform lvl 3 deel 2
+ if (speler1Y > 455 && speler1Y < 535 && speler1X < 775) { // platform lvl 3 deel 2
      speler1Y = 455;
      if (keyIsPressed === true) { 
          if (keyCode === 38) { // 38=up arrow
