@@ -228,7 +228,16 @@ var beweegSpeler1 = function() {
  }
 }
 
- if (speler1Y > 455 && speler1Y < 535 && speler1X < 735) { 
+if (speler1Y > 455 && speler1Y < 535 && speler1X > width - 300) {
+     speler1Y = 455;
+     if (keyIsPressed === true) { 
+         if (keyCode === 38) { // 38=up arrow
+          speler1Y = 425;
+         }
+ }
+} 
+
+ if (speler1Y > 455 && speler1Y < 535 && speler1X > 775) { 
      speler1Y = 455;
      if (keyIsPressed === true) { 
          if (keyCode === 38) { // 38=up arrow
@@ -237,19 +246,10 @@ var beweegSpeler1 = function() {
  }
 }
 
-if (speler1Y > 455 && speler1Y < 535 && speler1X > width - 300) {
-     speler1Y = 455;
-     if (keyIsPressed === true) { 
-         if (keyCode === 38) { // 32=up arrow
-          speler1Y = 425;
-         }
- }
-} 
-
   if (speler1Y > 655 && speler1Y < 735) {
      speler1Y = 655;
      if (keyIsPressed === true) { 
-         if (keyCode === 38) { // 38=uparrow
+         if (keyCode === 38) { // 38=up arrow
           speler1Y = 625;
          }
  }
