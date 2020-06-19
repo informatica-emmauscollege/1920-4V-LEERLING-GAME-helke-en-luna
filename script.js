@@ -148,19 +148,19 @@ var tekenKogel = function(x, y) {
 var tekenSpeler1 = function(x, y) {
   fill("blue");
   ellipse(speler1X,speler1Y,50,50);
-  image(imgVuurmeisje,80,150, 50,50); 
+  /*image(imgVuurmeisje,80,150,60,80); */
 };
-
+/*
 function preload() {
     imgVuurmeisje = loadImage('fotos/firegirl.png');
-}
+} */
 
 var tekenSpeler2 = function(x, y) {
   fill("red");
   ellipse(speler2X,speler2Y,50,50);
-  image(imgWaterjongen, 100, 150,50,50); 
+ /* image(imgWaterjongen, 100, 150,50,50); */
 };
-
+/*
 function preload() {
     imgWaterjongen = loadImage('fotos/waterboy.png');
 }
