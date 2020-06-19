@@ -97,12 +97,17 @@ var tekenStartscherm = function () {
     text("Banana Peel", xStartBtn - 35, yStartBtn - 15); 
 
     image(imgBananaPeel, 60, 300);
+    image(imgDancingBanana, 1000, 100);
 
 };
 
 var imgBananaPeel = 0;
+var imgHappyBanana = 0;
+var imgDancingBanana = 0;
 function preload() {
-    imgBananaPeel = loadImage('fotos/BananaPeel.png');
+    imgBananaPeel = loadImage('fotos/BananaPeel.png'); // image startscherm
+    imgHappyBanana = loadImage('fotos/HappyBanana.png'); // image eindscherm
+    imgDancingBanana = loadImage('fotos/DancingBanana.gif'); // image startscherm
 };
  
 /**
@@ -198,22 +203,13 @@ var tekenTimer = function () {
 var tekenSpeler1 = function(x, y) {
   fill("blue");
   ellipse(speler1X,speler1Y,50,50);
-  /*image(imgVuurmeisje,80,150,60,80); */
 };
-/*
-function preload() {
-    imgVuurmeisje = loadImage('fotos/firegirl.png');
-} */
+
 
 var tekenSpeler2 = function(x, y) {
   fill("red");
   ellipse(speler2X,speler2Y,50,50);
- /* image(imgWaterjongen, 100, 150,50,50); */
 };
-/*
-function preload() {
-    imgWaterjongen = loadImage('fotos/waterboy.png');
-}
 
 
 /**
@@ -418,8 +414,10 @@ var tekenEindscherm = function() {
     // @ts-ignore
     text("You did it!", xEindBtn + 3, yEindBtn - 15); 
 
-};
+    image(imgHappyBanana, 40, 500);
 
+};
+ 
 /**
  * Zoekt uit of de speler is geraakt
  * bijvoorbeeld door botsing met vijand
