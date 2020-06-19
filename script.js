@@ -310,7 +310,9 @@ var beweegSpeler2 = function() {
  * @returns {boolean} true als vijand is geraakt
  */
 var checkEindeGeraakt = function() {
-
+    if (speler1X > 1180 && speler1X < 1240 && speler1Y > 600 && speler1Y < 680 && speler2X > 1180 && speler2X < 1240 && speler2Y > 600 && speler2Y < 680) {
+        spelStatus = GAMEOVER;
+    }
   return false;
 }; 
 
@@ -409,7 +411,7 @@ function draw() {
 
       
       if (checkEindeGeraakt()) {
-          
+          spelStatus = GAMEOVER;
       }
       
       /*if(checkKogelGeraakt()){
