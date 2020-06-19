@@ -30,6 +30,7 @@ var speler2Y = 175; // y-positie van speler2
 
 var kogel1X = 600;    // x-positie van kogel
 var kogel1Y = 180;    // y-positie van kogel
+var kogel1Aanwezig = true;
 
 var kogel2X = 400;
 var kogel2Y = 320;
@@ -139,7 +140,9 @@ var tekenEinde = function(x, y) {
 var tekenKogel = function(x, y) {
     fill(143, 219, 255);
      
-     ellipse(600, 180, 20,20); //item1
+    if (kogel1Aanwezig === true) {
+      ellipse(600, 180, 20,20); //item1
+    }
      ellipse(400, 320, 20,20); //item2
      ellipse(1100, 460,20,20); //item3
      ellipse(90, 660,20,20); //item4
@@ -345,7 +348,8 @@ var checkEindeGeraakt = function() {
 
 var checkKogelGeraakt = function() {
     if(speler1X > 575 && speler1X < 625 && speler1Y > 155 && speler1Y < 205){ //kogel1 geraakt
-       
+       console.log("kogel1 geraakt");
+       kogel1Aanwezig = false;
     }
     if(speler1X > 375 && speler1X < 425 && speler1Y > 295 && speler1Y < 335){ //kogel2 geraakt
         
@@ -440,11 +444,9 @@ function draw() {
           spelStatus = GAMEOVER;
       }
       
-      /*if(checkKogelGeraakt()){
+      if(checkKogelGeraakt()){
 
-        stop met het tekenen van de kogel
-
-    } */
+      }
 
       if (checkSpelerGeraakt()) {
         // leven eraf of gezondheid verlagen
