@@ -213,7 +213,7 @@ var beweegSpeler1 = function() {
  if (speler1Y > 455 && speler1Y < 535) {
      speler1Y = 455;
      if (keyIsPressed === true) { 
-         if (keyCode === 38) { // 32=up arrow
+         if (keyCode === 38) { // 38=up arrow
           speler1Y = 425;
          }
  }
@@ -310,7 +310,9 @@ var beweegSpeler2 = function() {
  * @returns {boolean} true als vijand is geraakt
  */
 var checkEindeGeraakt = function() {
-
+    if (speler1X > 1180 && speler1X < 1240 && speler1Y > 600 && speler1Y < 680 && speler2X > 1180 && speler2X < 1240 && speler2Y > 600 && speler2Y < 680) {
+        spelStatus = GAMEOVER;
+    }
   return false;
 }; 
 
@@ -409,7 +411,7 @@ function draw() {
 
       
       if (checkEindeGeraakt()) {
-          
+          spelStatus = GAMEOVER;
       }
       
       /*if(checkKogelGeraakt()){
