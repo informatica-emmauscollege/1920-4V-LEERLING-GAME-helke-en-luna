@@ -56,9 +56,9 @@ var imgWaterjongen;
 var xEindBtn = 460;
 var yEindBtn = 320;
 
-
-
-
+var timerMiliSec = 0;
+var timerSec = 0;
+var timerMin = 0;
 
 /* ********************************************* */
 /*      functies die je gebruikt in je game      */
@@ -157,6 +157,28 @@ var tekenKogel = function(x, y) {
      ellipse(90, 660,20,20); //item4
     }
 };
+
+var tekenTimer = function () {
+    timerMiliSec++;
+
+    if (timerMiliSec == 60) {
+            timerMiliSec = 0;
+            timerSec++;
+    }
+    if (timerSec == 60) {
+        timerSec = 0;
+        timerMin ++;
+    } 
+    
+    fill('white');
+    textSize(35);
+    text(timerMin.toString(), 90,100,900,750);
+    text(":", 110, 100,900,750);
+    text(timerSec.toString(), 125, 100,900,750);
+    text(":", 160,100,900,750);
+    text(timerMiliSec.toString(), 175, 100, 900, 750);
+
+}
 
 
 /**
@@ -443,6 +465,7 @@ function draw() {
       beweegKogel();
       beweegSpeler1();
       beweegSpeler2();
+      tekenTimer();
 
        
 
