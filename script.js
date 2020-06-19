@@ -366,19 +366,16 @@ var tekenEindscherm = function() {
 
     background(0, 0, 0);
 
-    fill(138, 63, 63);
-    rect(xEindBtn,yEindBtn, 390,100);
-
     fill(250, 250, 255);
     textSize(40);
     // @ts-ignore
-    text("Reload page to start over",xStartBtn + 5,yStartBtn + 59);
+    text("Reload page to start over",xStartBtn - 50,yStartBtn + 60);
 
     fill(250, 250, 37);
     textSize(80);
 
     // @ts-ignore
-    text("You did it!", xEindBtn - 35, yEindBtn - 15); 
+    text("You did it!", xEindBtn + 3, yEindBtn - 15); 
 
 };
 
