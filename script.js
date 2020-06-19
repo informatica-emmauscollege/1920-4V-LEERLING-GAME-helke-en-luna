@@ -88,13 +88,14 @@ var tekenStartscherm = function () {
     // @ts-ignore
     text("Banana Peel", xStartBtn - 35, yStartBtn - 15); 
 
-    //imgBananaPeal(50,600)
+    image(imgBananaPeel, 60, 300);
 
 };
 
-/*function preload() {
-    imgBananapeal = loadImage('fotos/BananaPeal.png');
-}*/
+var imgBananaPeel = 0;
+function preload() {
+    imgBananaPeel = loadImage('fotos/BananaPeel.png');
+};
  
 /**
  * Tekent het speelveld
