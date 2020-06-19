@@ -74,11 +74,11 @@ var tekenStartscherm = function () {
     
     fill('white');
     textSize(30);
-    text("Speler 1 (blauw): gebruik WASD om te bewegen", 20,20,700,40);
+    text("Speler 1 (blauw): gebruik pijltjes om te bewegen", 20,20,700,40);
 
     fill('white');
     textSize(30);
-    text("Speler 2 (rood): gebruik pijltjes om te bewegen", 20,70,700,40);
+    text("Speler 2 (rood): gebruik WASD om te bewegen", 20,70,700,40);
 
 
     fill(250, 180, 60);
