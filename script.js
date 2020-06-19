@@ -120,6 +120,7 @@ var tekenVeldVoor = function () {
 
     rect(0,0,40, height); //zijkantLinks
     rect(1240, 0, 40, height); //zijkantRechts
+
 };
 
 
@@ -228,16 +229,7 @@ var beweegSpeler1 = function() {
  }
 }
 
- if (speler1Y > 455 && speler1Y < 535 && speler1X > width - 300) { // platform lvl 3 deel 1
-     speler1Y = 455;
-     if (keyIsPressed === true) { 
-         if (keyCode === 38) { // 38=up arrow
-          speler1Y = 425;
-         }
- }
-} 
-
- if (speler1Y > 455 && speler1Y < 535 && speler1X < 775) { // platform lvl 3 deel 2
+  if (speler1Y > 455 && speler1Y < 535 && speler1X < 735) { // platform lvl 3 deel 1
      speler1Y = 455;
      if (keyIsPressed === true) { 
          if (keyCode === 38) { // 38=up arrow
@@ -246,7 +238,16 @@ var beweegSpeler1 = function() {
  }
 }
 
- if (speler1Y > 655 && speler1Y < 735) {
+ if (speler1Y > 455 && speler1Y < 535 && speler1X > width - 500) { // platform lvl 3 deel 2
+     speler1Y = 455;
+     if (keyIsPressed === true) { 
+         if (keyCode === 38) { // 38=up arrow
+          speler1Y = 425;
+         }
+ }
+} 
+
+ if (speler1Y > 655) { // onderkant
      speler1Y = 655;
      if (keyIsPressed === true) { 
          if (keyCode === 38) { // 38=up arrow
@@ -295,16 +296,7 @@ var beweegSpeler2 = function() {
  }
  }
 
- if (speler2Y > 455 && speler2Y < 535 && speler2X > width - 300) { // platform lvl 3 deel 1
-     speler2Y = 455;
-     if (keyIsPressed === true) { 
-         if (keyCode === 87) { // 87=w
-          speler2Y = 425;
-         }
- }
-} 
- 
- if (speler2Y > 455 && speler2Y < 535 && speler2X < 775) { //platform lvl 3 deel 2
+ if (speler2Y > 455 && speler2Y < 535 && speler2X < 735) { //platform lvl 3 deel 1
      speler2Y = 455;
      if (keyIsPressed === true) { 
          if (keyCode === 87) { // 87=w
@@ -313,7 +305,16 @@ var beweegSpeler2 = function() {
  }
 }
 
- if (speler2Y > 655 && speler2Y < 735) {
+ if (speler2Y > 455 && speler2Y < 535 && speler2X > width - 500) { // platform lvl 3 deel 2
+     speler2Y = 455;
+     if (keyIsPressed === true) { 
+         if (keyCode === 87) { // 87=w
+          speler2Y = 425;
+         }
+ }
+} 
+
+ if (speler2Y > 655) { // onderkant
      speler2Y = 655;
      if (keyIsPressed === true) { 
          if (keyCode === 87) { // 87=w
@@ -325,7 +326,7 @@ var beweegSpeler2 = function() {
  // speler blijft in het speelveld
 
  if (speler2X < 65) {
-      speler2X = 65;
+      speler2X = 62;
   }
   if (speler2X > 1215) {
       speler2X = 1215;
@@ -351,7 +352,6 @@ var checkEindeGeraakt = function() {
     }
   return false;
 }; 
-
 
 var checkKogelGeraakt = function() {
     if(speler1X > 575 && speler1X < 625 && speler1Y > 155 && speler1Y < 205 || speler2X > 575 && speler2X < 625 && speler2Y > 155 && speler2Y < 205){ //kogel1 geraakt
