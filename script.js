@@ -90,7 +90,7 @@ var tekenStartscherm = function () {
  * Tekent het speelveld
  */
 var tekenVeldAchter = function () {
-    fill(130, 106, 78);
+    fill(117, 128, 123);
     rect(20, 20, width - 2 * 20, height - 2 * 20);
 
 };
@@ -210,7 +210,7 @@ var beweegSpeler1 = function() {
  }
 }
 
- if (speler1Y > 455 && speler1Y < 535) {
+ if (speler1Y > 455 && speler1Y < 535 && speler1X < 695) {
      speler1Y = 455;
      if (keyIsPressed === true) { 
          if (keyCode === 38) { // 32=up arrow
@@ -218,7 +218,17 @@ var beweegSpeler1 = function() {
          }
  }
 }
-  if (speler1Y > 655 && speler1Y < 735 && speler1X < width - 590 && speler1X > 480) {
+
+/*if (speler1Y > 455 && speler1Y < 535 && speler1X > width - 480) {
+     speler1Y = 455;
+     if (keyIsPressed === true) { 
+         if (keyCode === 38) { // 32=up arrow
+          speler1Y = 425;
+         }
+ }
+} */
+
+  if (speler1Y > 655 && speler1Y < 735) {
      speler1Y = 655;
      if (keyIsPressed === true) { 
          if (keyCode === 38) { // 38=uparrow
@@ -310,7 +320,9 @@ var beweegSpeler2 = function() {
  * @returns {boolean} true als vijand is geraakt
  */
 var checkEindeGeraakt = function() {
-
+    if (speler1X > 1180 && speler1X < 1240 && speler1Y > 600 && speler1Y < 680 && speler2X > 1180 && speler2X < 1240 && speler2Y > 600 && speler2Y < 680) {
+        spelStatus = GAMEOVER;
+    }
   return false;
 }; 
 
@@ -409,7 +421,7 @@ function draw() {
 
       
       if (checkEindeGeraakt()) {
-          
+          spelStatus = GAMEOVER;
       }
       
       /*if(checkKogelGeraakt()){
