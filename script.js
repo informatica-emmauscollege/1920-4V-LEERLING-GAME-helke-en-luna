@@ -88,13 +88,13 @@ var tekenStartscherm = function () {
     // @ts-ignore
     text("Banana Peel", xStartBtn - 35, yStartBtn - 15); 
 
-   /* imgBananaPeal(50,600)*/
+    //imgBananaPeal(50,600)
 
 };
-/*
-function preload() {
+
+/*function preload() {
     imgBananapeal = loadImage('fotos/BananaPeal.png');
-}
+}*/
  
 /**
  * Tekent het speelveld
@@ -228,7 +228,7 @@ var beweegSpeler1 = function() {
  }
 }
 
- if (speler1Y > 455 && speler1Y < 535 && speler1X < 695) {
+ if (speler1Y > 455 && speler1Y < 535 && speler1X < 735) { 
      speler1Y = 455;
      if (keyIsPressed === true) { 
          if (keyCode === 38) { // 38=up arrow
@@ -237,7 +237,7 @@ var beweegSpeler1 = function() {
  }
 }
 
-if (speler1Y > 455 && speler1Y < 535 && speler1X > width - 350) {
+if (speler1Y > 455 && speler1Y < 535 && speler1X > width - 300) {
      speler1Y = 455;
      if (keyIsPressed === true) { 
          if (keyCode === 38) { // 32=up arrow
@@ -295,7 +295,7 @@ var beweegSpeler2 = function() {
  }
  }
  
- if (speler2Y > 455 && speler2Y < 535 && speler2X < 695) {
+ if (speler2Y > 455 && speler2Y < 535 && speler2X < 735) {
      speler2Y = 455;
      if (keyIsPressed === true) { 
          if (keyCode === 38) { // 38=up arrow
