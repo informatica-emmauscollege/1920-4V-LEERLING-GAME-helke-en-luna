@@ -180,7 +180,7 @@ var beweegEinde = function(x,y) {
 
 var beweegKogel = function() {
      if (speler1X > 575 && speler1X < 625 && speler1Y > 155 && speler1Y < 205) {
-       
+
      }
 }
 
