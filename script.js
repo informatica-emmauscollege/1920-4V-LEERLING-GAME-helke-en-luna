@@ -90,7 +90,7 @@ var tekenStartscherm = function () {
  * Tekent het speelveld
  */
 var tekenVeldAchter = function () {
-    fill(117, 128, 123);
+    fill(229, 210, 247);
     rect(20, 20, width - 2 * 20, height - 2 * 20);
 
 };
@@ -219,7 +219,7 @@ var beweegSpeler1 = function() {
  }
 }
 
-if (speler1Y > 455 && speler1Y < 535 && speler1X > width - 455) {
+if (speler1Y > 455 && speler1Y < 535 && speler1X > width - 430) {
      speler1Y = 455;
      if (keyIsPressed === true) { 
          if (keyCode === 38) { // 32=up arrow
