@@ -88,7 +88,7 @@ var tekenStartscherm = function () {
     // @ts-ignore
     text("Banana Peel", xStartBtn - 35, yStartBtn - 15); 
 
-    /*imgBananaPeal(50,600)*/
+   /* imgBananaPeal(50,600)*/
 
 };
 /*
