@@ -298,7 +298,7 @@ var beweegSpeler2 = function() {
  if (speler2Y > 455 && speler2Y < 535 && speler2X < 735) {
      speler2Y = 455;
      if (keyIsPressed === true) { 
-         if (keyCode === 38) { // 38=up arrow
+         if (keyCode === 87) { // 87=w
           speler2Y = 425;
          }
  }
@@ -307,7 +307,7 @@ var beweegSpeler2 = function() {
 if (speler2Y > 455 && speler2Y < 535 && speler2X > width - 350) {
      speler2Y = 455;
      if (keyIsPressed === true) { 
-         if (keyCode === 38) { // 32=up arrow
+         if (keyCode === 87) { // 87=w
           speler2Y = 425;
          }
  }
@@ -316,7 +316,7 @@ if (speler2Y > 455 && speler2Y < 535 && speler2X > width - 350) {
   if (speler2Y > 655 && speler2Y < 735) {
      speler2Y = 655;
      if (keyIsPressed === true) { 
-         if (keyCode === 38) { // 38=uparrow
+         if (keyCode === 87) { // 87=w
           speler2Y = 625;
          }
  }
