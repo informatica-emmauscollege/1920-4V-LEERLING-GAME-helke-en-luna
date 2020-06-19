@@ -356,19 +356,19 @@ var checkEindeGeraakt = function() {
 
 
 var checkKogelGeraakt = function() {
-    if(speler1X > 575 && speler1X < 625 && speler1Y > 155 && speler1Y < 205 && speler2X > 575 && speler2X < 625 && speler2Y > 155 && speler2Y < 205){ //kogel1 geraakt
+    if(speler1X > 575 && speler1X < 625 && speler1Y > 155 && speler1Y < 205 || speler2X > 575 && speler2X < 625 && speler2Y > 155 && speler2Y < 205){ //kogel1 geraakt
        console.log("kogel1 geraakt");
        kogel1Aanwezig = false;
     }
-    if(speler1X > 375 && speler1X < 425 && speler1Y > 295 && speler1Y < 335 && speler2X > 375 && speler2X < 425 && speler2Y > 295 && speler2Y < 335){ //kogel2 geraakt
+    if(speler1X > 375 && speler1X < 425 && speler1Y > 295 && speler1Y < 335 || speler2X > 375 && speler2X < 425 && speler2Y > 295 && speler2Y < 335){ //kogel2 geraakt
         console.log("kogel2 geraakt");
        kogel2Aanwezig = false;
     }
-    if(speler1X > 1075 && speler1X < 1125 && speler1Y > 435 && speler1Y < 485 && speler2X > 1075 && speler2X < 1125 && speler2Y > 435 && speler2Y < 485){ //kogel3 geraakt
+    if(speler1X > 1075 && speler1X < 1125 && speler1Y > 435 && speler1Y < 485 || speler2X > 1075 && speler2X < 1125 && speler2Y > 435 && speler2Y < 485){ //kogel3 geraakt
         console.log("kogel3 geraakt");
        kogel3Aanwezig = false;
     }
-    if(speler1X > 65 && speler1X < 115 && speler1Y > 635 && speler1Y < 685 && speler2X > 65 && speler2X < 115 && speler2Y > 635 && speler2Y < 685){ //kogel4 geraakt
+    if(speler1X > 65 && speler1X < 115 && speler1Y > 635 && speler1Y < 685 || speler2X > 65 && speler2X < 115 && speler2Y > 635 && speler2Y < 685){ //kogel4 geraakt
        console.log("kogel4 geraakt");
        kogel4Aanwezig = false;
     }
