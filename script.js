@@ -453,6 +453,7 @@ function draw() {
           spelStatus = GAMEOVER;
       }
       
+      // @ts-ignore
       if(checkKogelGeraakt()){
 
       }
