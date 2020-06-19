@@ -40,8 +40,8 @@ var kogel3Y = 460;
 var kogel4X = 90;
 var kogel4Y = 660;
 
-var eindeX = 1180;   // x-positie van vijand
-var eindeY = 600;   // y-positie van vijand
+var eindeX = 1180;   // x-positie van einde
+var eindeY = 600;   // y-positie van einde
 
 var xStartBtn = 460; // x-positie startknop
 var yStartBtn = 320; // y-positie startknop
@@ -90,7 +90,7 @@ var tekenStartscherm = function () {
  * Tekent het speelveld
  */
 var tekenVeldAchter = function () {
-    fill(130, 106, 78);
+    fill(117, 128, 123);
     rect(20, 20, width - 2 * 20, height - 2 * 20);
 
 };
@@ -210,7 +210,7 @@ var beweegSpeler1 = function() {
  }
 }
 
- if (speler1Y > 455 && speler1Y < 535) {
+ if (speler1Y > 455 && speler1Y < 535 && speler1X < 695) {
      speler1Y = 455;
      if (keyIsPressed === true) { 
          if (keyCode === 38) { // 38=up arrow
@@ -218,7 +218,17 @@ var beweegSpeler1 = function() {
          }
  }
 }
-  if (speler1Y > 655 && speler1Y < 735 && speler1X < width - 590 && speler1X > 480) {
+
+/*if (speler1Y > 455 && speler1Y < 535 && speler1X > width - 480) {
+     speler1Y = 455;
+     if (keyIsPressed === true) { 
+         if (keyCode === 38) { // 32=up arrow
+          speler1Y = 425;
+         }
+ }
+} */
+
+  if (speler1Y > 655 && speler1Y < 735) {
      speler1Y = 655;
      if (keyIsPressed === true) { 
          if (keyCode === 38) { // 38=uparrow
