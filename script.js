@@ -148,12 +148,12 @@ var tekenKogel = function(x, y) {
 var tekenSpeler1 = function(x, y) {
   fill("blue");
   ellipse(speler1X,speler1Y,50,50);
-  /*image(imgVuurmeisje,80,150, 50,50); */
+  image(imgVuurmeisje,80,150, 50,50); 
 };
-/*
+
 function preload() {
     imgVuurmeisje = loadImage('fotos/firegirl.png');
-}*/
+}
 
 var tekenSpeler2 = function(x, y) {
   fill("red");
@@ -219,11 +219,7 @@ var beweegSpeler1 = function() {
  }
 }
 
-<<<<<<< HEAD
-if (speler1Y > 455 && speler1Y < 535 && speler1X > width - 100) {
-=======
 if (speler1Y > 455 && speler1Y < 535 && speler1X > width - 350) {
->>>>>>> ae1f02e0ee0749b90253de60307389ee27e6322f
      speler1Y = 455;
      if (keyIsPressed === true) { 
          if (keyCode === 38) { // 32=up arrow
